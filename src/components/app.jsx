@@ -24,7 +24,7 @@ class App extends Component {
 					<GifList gifs={gifs} />
 				</div>
 			</div>	
-		);
+		)
 	}
 }
 
