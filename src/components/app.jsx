@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import giphy from 'giphy-api';
 
 import SearchBar from './searchbar.jsx';
 import Gif from './gif.jsx';
@@ -12,6 +13,19 @@ class App extends Component {
 			gifs: [], 
 			selectedGifID: "2es7KiuoYLR3d5ye5v"
 		}
+
+		this.search("homer thinking")
+	}
+
+	search = (query) => {
+		giphy('nAD8YUqiBSfdkEjGANIACzpbPj8AeSzH').search({
+			q: query,
+			rating: 'g'
+		}, (error, result) => {
+			this.setState({
+				gifs: result.data
+			});
+		});
 	}
 
 	render() {
