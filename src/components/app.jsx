@@ -13,8 +13,10 @@ class App extends Component {
 
 		this.state = {
 			gifs: [], 
-			selectedGifId: "2es7KiuoYLR3d5ye5v"
+			selectedGifId: "lcs5BL0NIM4WMv61a9"
 		};
+
+		this.search("hello world")
 	}
 
 	search = (query) => {
@@ -22,7 +24,7 @@ class App extends Component {
 			.search({
 				q: query,
 				rating: 'g', 
-				limit: 10
+				limit: 10   
 			}, (error, result) => {
 				this.setState({
 					gifs: result.data
